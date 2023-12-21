@@ -52,16 +52,16 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        setContentView(R.layout.layout);
+        setContentView(R.layout.layout)
 
-        videoView = findViewById(R.id.videoView);
+        videoView = findViewById(R.id.videoView)
 
         filePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) {
-            onSelectedVideo(it);
+            onSelectedVideo(it)
         }
 
         if (!hasPermissions(baseContext)) {
-            activityResultLauncher.launch(REQUIRED_PERMISSIONS);
+            activityResultLauncher.launch(REQUIRED_PERMISSIONS)
         }
         else {
             startCamera()
@@ -107,7 +107,7 @@ class MainActivity : ComponentActivity() {
 
     private fun onSelectedVideo(it: Uri?) {
         if (it == null) {
-            return;
+            return
         }
         videoView.setVideoURI(it)
         videoView.start()
